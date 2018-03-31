@@ -1,0 +1,13 @@
+extends layout
+
+
+block content
+  div.container-fluid
+    div.row-full
+        h2 Category: #{category.title}
+    .row
+    each item in catItems
+        .col-md-4
+        a(href='/item/'+item.name)
+            img(src=item.image)
+            h4=item.title

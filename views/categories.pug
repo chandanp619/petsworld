@@ -1,0 +1,13 @@
+extends layout
+
+
+block content
+  div.container-fluid
+    div.row-full
+    h1 Welcome to #{title}
+    ul.cat-listing
+        each cat in category
+            li 
+                a( href="/categories/"+cat.name)
+                    h3=cat.title
+                    img(src=cat.image)

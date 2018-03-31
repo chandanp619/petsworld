@@ -1,0 +1,20 @@
+extends layout
+
+
+block content
+  div.container-fluid
+    div.row
+      h1 User Login
+      form(method="post" action="/users/processLogin" id="login-form")
+        .container
+          .row
+           
+              .col-md-offset-2.col-md-10
+                .form-group
+                  input(name="username" placeholder="Username" class="form-control" type="text" required="required")
+              .col-md-offset-2.col-md-10
+                .form-group
+                  input(name="password" placeholder="Password" class="form-control" type="password" required="required")
+              .col-md-offset-2.col-md-10
+                .form-group
+                  input(name="submit" value="Login" class="btn btn-default" type="submit")

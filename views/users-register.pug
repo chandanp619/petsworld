@@ -1,0 +1,28 @@
+extends layout
+
+
+block content
+  div.container-fluid
+    div.row
+      h1 User Registration
+      form(method="post" action="/users/processRegister" id="reg-form")
+        .container
+            .row
+                .col-md-offset-2.col-md-10
+                    .form-group
+                      input(name="fname" placeholder="First Name" class="form-control" type="text" required="required")
+                .col-md-offset-2.col-md-10
+                    .form-group
+                      input(name="lname" placeholder="Last Name" class="form-control" type="text" required="required")
+                .col-md-offset-2.col-md-10
+                    .form-group
+                      input(name="username" placeholder="Username" class="form-control" type="text" required="required")
+                .col-md-offset-2.col-md-10
+                    .form-group
+                      input(name="email" placeholder="email" class="form-control" type="email" required="required")
+                .col-md-offset-2.col-md-10
+                    .form-group
+                      input(name="password" placeholder="Password" class="form-control" type="password" required="required")      
+                .col-md-offset-2.col-md-10
+                    .form-group
+                      input(name="submit" value="Register" class="btn btn-default" type="submit")

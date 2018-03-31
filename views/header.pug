@@ -1,0 +1,6 @@
+extends layout
+
+block header
+    if req.session.user
+        p welcome #{req.session.user.username}
+    
