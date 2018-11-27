@@ -8,6 +8,11 @@ block content
     .row
     each item in catItems
         .col-md-4
-        a(href='/item/'+item.name)
-            img(src=item.image)
-            h4=item.title
+            a(href='/item/'+item.name)
+                img(src=item.image)
+                h4=item.title
+                p=item.description
+                span=item.price
+            form(method="post" action="/cart/add/"+item._id)
+                input(type="text" size="3" name="quantity")
+                input(type="submit" name="submt" value="Add to Cart")

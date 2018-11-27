@@ -5,14 +5,14 @@ var async = require('async');
 const Schema = mongoose.Schema;
 var Category_Schemas = require('../model/category'); 
 var Listing_Schemas = require('../model/listing'); 
-/* GET home page. */
+/* category listing. */
 router.get('/', function(req, res, next) {  
 var CategoryModel = mongoose.model('Category',Category_Schemas.Category);  
     CategoryModel.find({},function(err,data){
         if(err) return res.render('error');
         console.log(data);
         
-        return res.render('categories', { title: 'Categories Archive' ,category:data});
+        return res.render('categories', { title: 'Categories' ,category:data});
     });
   
 });

@@ -1,0 +1,32 @@
+extends layout
+
+
+block content
+  div.container-fluid
+    div.row
+      h1 Add New
+      form(method="post" action="/listing/processNewListing" id="listing-new-form" enctype="multipart/form-data")
+        .container
+            .row
+                .col-md-offset-2.col-md-10
+                    .form-group
+                      input(name="title" placeholder="Title" class="form-control" type="text" required="required")
+                .col-md-offset-2.col-md-10
+                    .form-group
+                      textarea(name="description" placeholder="Description" class="form-control" required="required" id="description")
+                      script. 
+                        CKEDITOR.replace('description');
+                .col-md-offset-2.col-md-10
+                    .form-group
+                      input(name="image" placeholder="image" class="form-control" type="file" required="required")   
+                .col-md-offset-2.col-md-10
+                    .form-group
+                      select(name="category" placeholder="Select Category" class="form-control" required="required")         
+                          option(value="") Select Category
+                          each cat in category
+                            option(value=cat.name) #{cat.title}
+                        
+                .col-md-offset-2.col-md-10
+                    .form-group
+                      input(name="submit" value="Save" class="btn btn-default" type="submit")
+                      #{category}

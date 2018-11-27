@@ -1,0 +1,24 @@
+extends layout
+
+
+block content
+  div.container-fluid
+    div.row-full
+    h1 #{title}
+    table.cart(width="100%" border="1")
+        each item in cart
+            tr 
+                td
+                    a( href="/listing/"+item.item_id)
+                        img(src=item.item_image width="60")
+                td    
+                    span=item.item_name
+                td    
+                    span=item.item_quantity
+                td    
+                    span=item.item_rate
+                td
+                    span=item.item_rate * item.item_quantity   
+                td
+                    a(href="/cart/remove/"+item._id) Remove     
+                    

@@ -1,0 +1,53 @@
+extends layout
+
+
+block content
+  div.container-fluid
+    div.row
+    .container
+        .row
+            .col-md-12
+                h2 Welcome #{data.User.username}
+                p 
+                    a(href="/users/logout") Logout
+        .row
+            .col-md-12
+                h3 Your Listings
+                a(href="/listing/addNew") Add New Listing
+                table#listTable
+                    each list in data.Listing
+                        tr
+                            td
+                                img(src=list.image class="listimg")
+                            td=list.title
+                            td
+                                a( id="EditList" data-id=list._id) Edit
+
+                                a( id="RemoveList" data-id=list._id) Delete
+        
+        .row
+            .col-md-12
+                h3 Edit Your Profile
+                form(method="post" action="/users/updateProfile")
+                    .row
+                        .col-md-6.field-group
+                            label.userlbl Username
+                            input(type='text', name="username" value=data.User.username class="form-control")
+                        .col-md-6.field-group    
+                            label.userlbl Email
+                            input(type='text', name="email" readonly="readonly" value=data.User.email class="form-control")
+                    .row        
+                        .col-md-6.field-group
+                            label.userlbl Password
+                            input(type='password', name="password" value=data.User.password class="form-control")
+                        .col-md-6.field-group
+                          label.userlbl First Name
+                          input(type='text', name="fname" value=data.User.fname class="form-control")
+                    .row
+                        .col-md-6.field-group
+                          label.userlbl Last Name
+                          input(type='text', name="lname" value=data.User.lname class="form-control")
+                    .row
+                        .col-md-12.field-group.text-center
+                          input(type='submit', value='Save' name="submt")
+

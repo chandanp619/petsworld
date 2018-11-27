@@ -8,7 +8,11 @@ const Listing = new Schema({
     description:{type : String , unique : true, required : true, dropDups: true},
     add_date:String,
     image:String,
-    status:String
+    category:String,
+    status:String,
+    user:ObjectId,
+    price:String
+
 });
 var ListingModel = mongoose.model('Listing',Listing);  
 return {'Listing':Listing};

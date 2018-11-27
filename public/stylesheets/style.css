@@ -1,15 +1,7 @@
-body {
-  padding: 0px;
-  margin:0px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00B7FF;
-}
+body { padding: 0px; margin:0px; font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;}
+a{color: #00B7FF;}
 img{width:100%;}
-
-header{ background-color:#ff9999}
+header{ background-color: tomato;}
 .logo{ padding:20px;}
 .logo img{ width:70%;}
 ul.cat-listing li{ width:30%; display: inline-block; vertical-align: top; text-align: center; border:1px solid #999; margin: 5px;}
@@ -18,3 +10,19 @@ ul.cat-listing li a img{width:100%;}
 .userlbl{width:30%;}
 #listTable img{width:64px !important; height:auto;}
 .listimg{}
+.navbar-default {
+  background-color: transparent;
+  border-color: transparent;
+  margin-top: 65px;
+}
+.navbar-default .navbar-nav>li>a { font-size:18px; font-weight:bold; color: #fff;background-color: tomato;}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{ color:#fff; background-color: tomato;}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover{ color:#fff; background-color: tomato;}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {color:#ddf; background-color: tomato;}
+
+.cate-item{ border: 1px solid #000; border-radius: 5px; padding: 10px;}
+#listTable{ border: 1px solid #9f9f9f; width:100%}
+#listTable tr{border: 1px solid #9f9f9f; }
+#listTable tr td{padding: 5px;}
+.cate-item h4{ text-align: center;}
+i.fa{ font-size: 24px}

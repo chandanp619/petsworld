@@ -9,11 +9,11 @@ block content
             .col-md-12
                 h2 Welcome #{data.User.username}
                 p 
-                    a(href="/users/logout") Logout
+                    a.btn.btn-primary(href="/users/logout") Logout
         .row
             .col-md-12
                 h3 Your Listings
-                a(href="#") Add New Listing
+                a.btn.btn-primary(href="/listing/addnew") Add New Listing
                 table#listTable
                     each list in data.Listing
                         tr
@@ -21,10 +21,12 @@ block content
                                 img(src=list.image class="listimg")
                             td=list.title
                             td
-                                a( id="EditList" data-id=list._id) Edit
+                                a.EditList( data-id=list._id) 
+                                    i.fa.fa-pencil-square-o(aria-hidden='true')
 
-                                a( id="RemoveList" data-id=list._id) Delete
-        
+                                a.RemoveList( data-id=list._id) 
+                                    i.fa.fa-trash(aria-hidden='true')
+                
         .row
             .col-md-12
                 h3 Edit Your Profile
@@ -49,5 +51,5 @@ block content
                           input(type='text', name="lname" value=data.User.lname class="form-control")
                     .row
                         .col-md-12.field-group.text-center
-                          input(type='submit', value='Save' name="submt")
+                          input.btn.btn-primary(type='submit', value='Save' name="submt")
 
